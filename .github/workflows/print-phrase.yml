@@ -2,10 +2,20 @@
 name: 'Print phrase from entrypoint.sh'
 on:
   push:
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  env:
-    INPUT_BAR: ${{ secrets.BAR }}
-  #args:
-    #- ${{ inputs.who-to-greet }}
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+on:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a multi-line script
+        run: |
+          echo "line1" ,
+          echo "line2" ,
+          echo $HOSTNAME ,
+          dt=$(date '+%Y/%m/%d') ,
+          echo $dt
