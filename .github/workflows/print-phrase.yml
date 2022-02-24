@@ -1,0 +1,11 @@
+# action.yml
+name: 'Print phrase from entrypoint.sh'
+on:
+  push:
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    INPUT_BAR: ${{ secrets.BAR }}
+  #args:
+    #- ${{ inputs.who-to-greet }}
