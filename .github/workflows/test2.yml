@@ -18,6 +18,6 @@ jobs:
           echo $HOSTNAME
           dt=$(date '+%Y/%m/%d')
           echo "$dt"
-          ping -c4 zaxal.com
-          ping -c4 bealie.com
-          curl -s https://zaxal.com/api/datetime
+          #ping -c4 zaxal.com
+          #ping -c4 bealie.com
+          curl -s https://zaxal.com/api/datetime/
